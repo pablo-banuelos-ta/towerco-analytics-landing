@@ -21,11 +21,20 @@
         <!-- Icons css -->
         <link href="static/assets/css/icons.min.css" rel="stylesheet" type="text/css" />        
         <style>
-            body {
-                overflow: hidden;
+            /* For desktop */
+            @media screen and (min-width: 768px) {
+                body {
+                    overflow: hidden;
+                }
             }
-        </style>        
-
+        
+            /* For mobile */
+            @media screen and (max-width: 767px) {
+                body {
+                    overflow: auto;
+                }
+            }
+        </style>
     </head>
 
     <body style="background-color: #313a46;">
