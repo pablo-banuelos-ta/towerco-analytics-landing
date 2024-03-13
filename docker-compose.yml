@@ -10,10 +10,10 @@ services:
     build: .
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.wire_telecoms.rule=Host(`www.towerco-analytics.com`)"
-      - "traefik.http.routers.wire_telecoms.entrypoints=websecure"
-      - "traefik.http.routers.wire_telecoms.tls.certresolver=myresolver"
-      - "traefik.http.services.wire_telecoms.loadbalancer.server.port=80"        
+      - "traefik.http.routers.wire_telecoms_landing.rule=Host(`www.towerco-analytics.com`)"
+      - "traefik.http.routers.wire_telecoms_landing.entrypoints=websecure"
+      - "traefik.http.routers.wire_telecoms_landing.tls.certresolver=myresolver"
+      - "traefik.http.services.wire_telecoms_landing.loadbalancer.server.port=80"        
     restart: unless-stopped
     networks:
       - websites
