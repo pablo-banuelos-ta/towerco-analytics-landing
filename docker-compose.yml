@@ -1,0 +1,21 @@
+version: "3.8"
+
+networks:
+  websites:
+    external: true
+
+services:
+  nginx:
+    container_name: wire_telecoms_landing-nginx
+    build:
+      context: .
+      dockerfile: .
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.wire_telecoms.rule=Host(`www.towerco-analytics.com`)"
+      - "traefik.http.routers.wire_telecoms.entrypoints=websecure"
+      - "traefik.http.routers.wire_telecoms.tls.certresolver=myresolver"
+      - "traefik.http.services.wire_telecoms.loadbalancer.server.port=80"        
+    restart: unless-stopped
+    networks:
+      - websites
