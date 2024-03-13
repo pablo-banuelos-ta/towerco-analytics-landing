@@ -7,9 +7,7 @@ networks:
 services:
   nginx:
     container_name: wire_telecoms_landing-nginx
-    build:
-      context: .
-      dockerfile: .
+    build: .
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.wire_telecoms.rule=Host(`www.towerco-analytics.com`)"
